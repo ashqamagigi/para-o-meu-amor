@@ -1,0 +1,205 @@
+:root {
+  --vermelho: #4d0000;     /* vermelho queimado */
+  --nude: #9e1616;         /* fundo claro delicado */
+  --rosinha: #1b0300;      /* rosa bebê levemente coral */
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial Rounded MT Bold', sans-serif;
+  background-color: var(--nude);
+  color: var(--vermelho);
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  color: var(--vermelho);
+  font-size: 2rem;
+}
+
+header p {
+  color: var(--rosinha);
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mensagem {
+  background-color: var(--rosinha);
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 20px;
+  font-size: 1rem;
+  box-shadow: 2px 2px 10px rgba(175, 20, 20, 0.2);
+}
+
+footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--vermelho);
+}
+
+.hearts-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #FE5F55;
+  transform: rotate(45deg);
+  animation: floatUp 4s ease-out forwards;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #FE5F55;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  left: -10px;
+  top: 0;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) scale(1.5) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+section {
+  margin-bottom: 40px;
+  background-color: var(--rosinha);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 2px 2px 10px rgba(175, 20, 20, 0.1);
+  z-index: 2;
+  position: relative;
+}
+
+section h2 {
+  color: var(--vermelho);
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+
+.linha-do-tempo ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.linha-do-tempo li {
+  margin-bottom: 10px;
+  color: white;
+}
+
+.linha-do-tempo li span {
+  font-weight: bold;
+  color: var(--bege);
+}
+
+.pinterest a {
+  color: var(--bege);
+  background-color: var(--vermelho);
+  padding: 10px 15px;
+  border-radius: 10px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.pinterest a:hover {
+  background-color: #800c0c;
+}
+
+.cartinha button {
+  background-color: var(--vermelho);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cartinha button:hover {
+  background-color: #8f0f0f;
+}
+
+#carta-escondida p {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: white;
+  background-color: var(--vermelho);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  header h2 {
+    font-size: 1rem;
+  }
+
+  .mensagem {
+    font-size: 0.95rem;
+    padding: 12px;
+  }
+
+  section h2, section h1 {
+    font-size: 1.2rem;
+  }
+
+  .cartinha button {
+    font-size: 0.9rem;
+  }
+}
